@@ -1,0 +1,27 @@
+<ng-template #formModal>
+  <div class="modal-header head-modal-set-font">
+    <h4 class="modal-title pull-left"> {{isCreate? 'Create Todo':'Edit Todo'}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>MyTask</label>
+        <input type="text" class="form-control" name="name" placeholder="MyTask"
+               [(ngModel)]="todo.name">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <button class="btn btn-sm btn-outline-secondary" (click)="modalRef.hide()">
+        Close
+      </button>
+      <button class="btn btn-sm btn-primary" [class.btn-info]="!isCreate" (click)="submit()" [ladda]="isLoading">
+        {{(isCreate? 'Create':'Edit')}}
+      </button>
+    </div>
+  </div>
+</ng-template>

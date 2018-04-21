@@ -1,0 +1,30 @@
+<ng-template #deleteModal>
+  <div class="modal-header head-modal-set-font">
+    <h4 class="modal-title pull-left">Delete Todo</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <span>
+        Are you sure to delete
+          <span class="text-danger">
+            {{todo.name}}
+          </span>
+        </span>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <button class="btn btn-sm btn-outline-secondary" (click)="modalRef.hide()">
+        Close
+      </button>
+      <button class="btn btn-sm btn-danger" (click)="submit()" [ladda]="isLoading">
+        Remove
+      </button>
+    </div>
+  </div>
+</ng-template>

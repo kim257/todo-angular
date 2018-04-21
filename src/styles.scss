@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap.scss';
+@import '~roboto-fontface/css/roboto/roboto-fontface.css';
+@import '~ladda/css/ladda.scss';
+@import "~font-awesome/css/font-awesome.css";
+
+/deep/ body, html {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 50%;
+}
