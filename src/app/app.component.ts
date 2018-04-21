@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ApiService} from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(private apiService: ApiService) {
+    this.getTodoList();
+  }
+
+  getTodoList() {
+    this.apiService.getTodoList().subscribe((res) => {
+      console.info('res', res);
+    }, (err) => {
+      console.info('err', err);
+    });
+  }
+
 }
